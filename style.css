@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f5f2;
+    background-image: url(123123123.png);
+    background-size:45px;
+    flex-direction: column;
+}
+
+.container{
+    margin-top: 150px;
+    background: #f45d48;
+    border: 3px solid #232323;
+    border-radius: 15px;
+    width: 700px;
+    height: 650px;
+    border-radius: 9px;
+}
+
+.title{
+    font-size: 40px;
+    color: #f8f5f2;
+}
+
+.container .cutout{
+    background-image:url(123123.jpg);
+    z-index: 99;
+}
+
+.container .bottle{
+    border: 3px solid #232323;
+    background:#078080;
+    width: 650px;
+    height: 600px;
+    margin-left: 23px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottle .inputbox{
+    border: 3px solid #232323;
+    background: #f8f5f2;
+    border-radius: 15px;
+    width:600px;
+    height:570px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+}
+
+
+.bottle .cabinet{
+    border: 3px solid #232323;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:#8bd3dd;
+    width: 200px;
+    margin-top: 70px;
+    height: 450px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 15px;
+    flex-direction: column;
+}
+
+.inputbox p{
+    font-size: 21px;
+    padding: 10px;
+    text-align: justify;
+    word-break: break-all;
+}
+.inputbox p span{
+    position: relative;
+}
+
+.inputbox p span.correct{
+    color: #56964f;
+
+}
+.inputbox p span.incorrect{
+    color: #cb3439;
+    background: #ffc0cb;
+}
+
+.inputbox p span.active{
+    color:#17a2b8;
+}
+.inputbox p span.active::before{
+    content:"";
+    position:absolute;
+    height: 2px;
+    width: 15px;
+    left:0px;
+    bottom:0;
+    opacity: 0;
+    background: #17a2b8;
+    animation: blink 1s ease-in-out infinite;
+}
+@keyframes blink{
+    50%{
+        opacity:1;
+    }
+}
+
+.container .inputarea{
+    opacity: 0;
+}
+
+.cabinet .timerh{
+    margin-top: 100px;
+    font-size: 34px;
+    border: 3px solid #232323;
+    border-radius: 10px;
+    background: #078080;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.cabinet .WPM{
+    margin-bottom: 100px;
+    margin-top: 65px;
+    font-size: 28px;
+    padding: 3px;
+    background:#078080;
+    border-radius: 10px;
+    border: 3px solid #232323;
+}
+
+
+.cabinet button{
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    border-radius: 15px;
+    background-color: red;
+    transition: all 0.3s ease;
+}
+
+.cabinet button:active {
+    transform: scale(0.50);
+}
+.cabinet button:hover {
+    background: lightcoral;
+}
+
+
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+.main{
+    bottom: 50px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon{
+    width: 35px;
+    height: 35px;
+    border-radius: 25px;
+    background: #fff;
+    margin: 14px;
+    text-align: center;
+    font-size: 25px;
+    line-height: 36px;
+    font-family: sans-serif;
+    overflow: hidden;
+    box-shadow: 5px 10px 20px rgba(150, 150, 150, .3);
+    transition: all .3s ease-out;
+   text-decoration: none;
+}
+.icon:hover{
+    width: 180px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #fff;
+   text-decoration: none;
+}
+.icon:hover i{
+    color: #fff;
+}
+.icon .fa-facebook-f{
+    color: #1A6ED8;
+}
+.fb:hover{
+    background: #1A6ED8;
+}
+.icon .fa-instagram{
+    color: #5851DB;
+}
+.ig:hover{
+  background: #f09433;
+background: -moz-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50% ,#cc2366 75%,#bc1888 100%);
+background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50% ,#cc2366 75%,#bc1888 100%);
+background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50% ,#cc2366 75%,#bc1888 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startcolorstr='#f09433', endcolorstr='#bc1888',GradientType=1);
+ text-decoration: none;
+}
+.icon .fa-linkedin-in{
+    color: #0077B5;
+}
+.lnk:hover{
+    background: #0077B5;
+    text-decoration: none;
+}
+.icon .fa-github{
+    color: #000;
+     text-decoration: none;
+}
+.git:hover{
+    background: #000;
+   text-decoration: none;
+}
+.icon .fa-youtube{
+    color: #FE0000;
+    text-decoration: none;
+}
+.yt:hover{
+    background: #FE0000;
+   text-decoration: none;
+}
+
+/* responsive */
+@media only screen and (min-width: 320px) and (max-width: 991px) {
+    .main{
+        flex-direction:column;
+    }
+}
+
+.col-six{
+    color: #f8f5f2;
+    text-decoration: none;
+}
+
+
+
