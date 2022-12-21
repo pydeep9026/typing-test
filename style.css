@@ -5,8 +5,8 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    height:100%;
-    width:100%;
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,10 +31,6 @@ body{
     color: #f8f5f2;
 }
 
-.container .cutout{
-    background-image:url(123123.jpg);
-    z-index: 99;
-}
 
 .container .bottle{
     border: 3px solid #232323;
@@ -63,7 +59,7 @@ body{
 .bottle .cabinet{
     border: 3px solid #232323;
     display: flex;
-    align-items: center;
+    align-items:center;
     justify-content: center;
     background:#8bd3dd;
     width: 200px;
@@ -94,32 +90,24 @@ body{
     background: #ffc0cb;
 }
 
-.inputbox p span.active{
-    color:#17a2b8;
+.inputbox p span.active{ 
+    background-color: #000;
+    color: #f8f5f2;
 }
-.inputbox p span.active::before{
-    content:"";
-    position:absolute;
-    height: 2px;
-    width: 15px;
-    left:0px;
-    bottom:0;
-    opacity: 0;
-    background: #17a2b8;
-    animation: blink 1s ease-in-out infinite;
-}
-@keyframes blink{
-    50%{
-        opacity:1;
-    }
-}
+
 
 .container .inputarea{
     opacity: 0;
 }
 
+.cabinet .timehead{
+    position: relative;
+    top: 60px;
+}
+
 .cabinet .timerh{
-    margin-top: 100px;
+    position: relative;
+    top:60px;
     font-size: 34px;
     border: 3px solid #232323;
     border-radius: 10px;
@@ -128,9 +116,13 @@ body{
     padding-right: 6px;
 }
 
+.cabinet .speedhead{
+    margin-top: 150px;
+}
+
 .cabinet .WPM{
-    margin-bottom: 100px;
-    margin-top: 65px;
+
+    margin-bottom: 150px;
     font-size: 28px;
     padding: 3px;
     background:#078080;
@@ -141,11 +133,12 @@ body{
 
 .cabinet button{
     padding: 10px;
-    margin-bottom: 20px;
     font-size: 30px;
+    position: relative;
+    bottom: 55px;
     border-radius: 15px;
     background-color: red;
-    transition: all 0.3s ease;
+    transition: all 1s ease;
 }
 
 .cabinet button:active {
