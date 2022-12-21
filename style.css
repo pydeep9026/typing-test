@@ -6,7 +6,7 @@
 }
 body{
     height: 100%;
-    width: 100%;
+    width: 100vmax;
     display: flex;
     align-items: center;
     justify-content: center;
