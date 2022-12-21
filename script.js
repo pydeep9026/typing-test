@@ -78,7 +78,7 @@ function typeover(){
     let wpm=Math.round((((letterindex-mistakes)/5)/(maxTime-timeleft ))*60);
     wpm=wpm<0||!wpm||wpm===Infinity?0:wpm;
     typingspeed.innerText=wpm;
-    let mistakeperc=mistakes/letterindex*100;
+    let mistakeperc=100-(mistakes/letterindex*100);
     mistakeper.innerText=mistakeperc.toFixed(0);
     }else{
         inputjs.value="";
