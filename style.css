@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Rubik+Gemstones&display=swap');
 
 
 * {
@@ -83,9 +84,13 @@ body{
     padding: 10px;
     text-align: justify;
     word-break: break-all;
+    font-family: 'Roboto Slab', serif;
+
 }
 .inputbox p span{
     position: relative;
+    font-family: 'Roboto Slab', serif;
+
 }
 
 .inputbox p span.correct{
