@@ -1,5 +1,4 @@
-const paragraphs = [
-    "Their politician was, in this moment, a notour paperback. The first armless grouse is, in its own way, a gear. The coat is a wash. However, a cake is the llama of a caravan. Snakelike armies show us how playgrounds can be viscoses. Framed in a different way, they were lost without the fatal dogsled that composed their waitress. Far from the truth, the cockney freezer reveals itself as a wiggly tornado to those who look. The first hawklike sack.",
+const paragraphs = ["Their politician was, in this moment, a notour paperback. The first armless grouse is, in its own way, a gear. The coat is a wash. However, a cake is the llama of a caravan. Snakelike armies show us how playgrounds can be viscoses. Framed in a different way, they were lost without the fatal dogsled that composed their waitress. Far from the truth, the cockney freezer reveals itself as a wiggly tornado to those who look. The first hawklike sack.",
     "Authors often misinterpret the lettuce as a folklore rabbi, when in actuality it feels more like an uncursed bacon. Pursued distances show us how mother-in-laws can be charleses. Authors often misinterpret the lion as a cormous science, when in actuality it feels more like a leprous lasagna. Recent controversy aside, their band was, in this moment, a racemed suit. The clutch of a joke becomes a togaed chair. The first pickled chess is.",
     "In modern times the first scrawny kitten is, in its own way, an input. An ostrich is the beginner of a roast. An appressed exhaust is a gun of the mind. A recorder is a grade from the right perspective. A hygienic is the cowbell of a skin. Few can name a dun brazil that isn't a highbrow playroom. The unwished beast comes from a thorny oxygen. An insured advantage's respect comes with it the thought that the lucid specialist is a fix.",
     "What we don't know for sure is whether or not a pig of the coast is assumed to be a hardback pilot. The literature would have us believe that a dusky clave is not but an objective. Few can name a limbate leo that isn't a sunlit silver. The bow is a mitten. However, the drawer is a bay. If this was somewhat unclear, few can name a paunchy blue that isn't a conoid bow. The undrunk railway reveals itself as a downstage bamboo to those who look.",
@@ -17,30 +16,21 @@ const paragraphs = [
     "The hefty opinion reveals itself as a sterile peer-to-peer to those who look. This could be, or perhaps the watch of a diamond becomes a bosom baboon. In recent years, some posit the unstuffed road to be less than altern. It's an undeniable fact, really; the livelong lettuce reveals itself as an unstuffed soda to those who look. In ancient times a bit is a balance's season. The popcorn of a morning becomes a moonless beauty.",
     "If this was somewhat unclear, a friend is a fridge from the right perspective. An upset carriage is a stitch of the mind. To be more specific, a temper is a pair from the right perspective. Authors often misinterpret the liquid as a notchy baseball, when in actuality it feels more like an unbarbed angle. Though we assume the latter, the first vagrom report is, in its own way, a tower. We know that the octopus of a cd becomes an unrent dahlia.",
     "A reptant discussion's rest comes with it the thought that the condemned syrup is a wish. The drake of a wallaby becomes a sonant harp. If this was somewhat unclear, spotty children show us how technicians can be jumps. Their honey was, in this moment, an intime direction. A ship is the lion of a hate. They were lost without the croupous jeep that composed their lily. In modern times a butcher of the birth is assumed to be a spiral bean.",
-    "Those cowbells are nothing more than elements. This could be, or perhaps before stockings, thoughts were only opinions. A coil of the exclamation is assumed to be a hurtless toy. A board is the cast of a religion. In ancient times the first stinko sailboat is, in its own way, an exchange. Few can name a tutti channel that isn't a footless operation. Extending this logic, an oatmeal is the rooster of a shake. Those step-sons are nothing more than matches.",
-];
-
-
-
-const inputarea=document.querySelector(".inputbox p"),
+    "Those cowbells are nothing more than elements. This could be, or perhaps before stockings, thoughts were only opinions. A coil of the exclamation is assumed to be a hurtless toy. A board is the cast of a religion. In ancient times the first stinko sailboat is, in its own way, an exchange. Few can name a tutti channel that isn't a footless operation. Extending this logic, an oatmeal is the rooster of a shake. Those step-sons are nothing more than matches.",],
+inputarea=document.querySelector(".inputbox p"),
 inputjs=document.querySelector(".container .inputarea"),
 timetag=document.querySelector(".timerh span b"),
 typingspeed=document.querySelector(".WPM span b"),
 restartbtn=document.querySelector(".cabinet button"),
 mistakeper=document.querySelector(".mistakepercent b");
+let timer,maxTime=60,timeleft=maxTime,letterindex= mistakes=istyping=0;
 
 
-
-let timer,
-maxTime=60,
-timeleft=maxTime,
-letterindex= mistakes=istyping=0;
 
 
 function loadParagraph() {
         const ranIndex = Math.floor(Math.random() * paragraphs.length);
         inputjs.innerHTML="";
-
         paragraphs[ranIndex].split("").forEach(char => {
             let span = `<span>${char}</span>`;
             inputarea.innerHTML += span;
@@ -48,6 +38,12 @@ function loadParagraph() {
         document.addEventListener("keydown", () => inputjs.focus());
         inputarea.addEventListener("click", () => inputjs.focus());
     }
+    loadParagraph();
+
+
+
+
+
 
 function typeover(){
     const letters=inputarea.querySelectorAll("span");
@@ -59,17 +55,17 @@ function typeover(){
     }
     if(typedletter==null){
         letterindex--;
-        if(letters[letterindex].classList.contains("incorrect")){
+    if(letters[letterindex].classList.contains("incorrect")){
         mistakes--;
-        }
-        letters[letterindex].classList.remove("correct","incorrect");
+    }
+    letters[letterindex].classList.remove("correct","incorrect");
     }else{ 
     if(letters[letterindex].innerText===typedletter){
 
-        letters[letterindex].classList.add("correct");
+    letters[letterindex].classList.add("correct");
     }else{
         mistakes++;
-        letters[letterindex].classList.add("incorrect");
+    letters[letterindex].classList.add("incorrect");
     }
     letterindex++;
     }
@@ -81,12 +77,16 @@ function typeover(){
     let mistakeperc=100-(mistakes/letterindex*100);
     mistakeper.innerText=mistakeperc.toFixed(0);
     }else{
-        inputjs.value="";
-        clearInterval(timer);
+    inputjs.value="";
+    clearInterval(timer);
     }
 }
+inputjs.addEventListener("input",typeover);
 
   
+
+
+
 
 function timeover(){
     if(timeleft>0){
@@ -99,11 +99,10 @@ function timeover(){
 
 
 
-loadParagraph();
 
-inputjs.addEventListener("input",typeover);
+
+
+
 restartbtn.onclick=()=>{
     location.reload()
 }
-
-
